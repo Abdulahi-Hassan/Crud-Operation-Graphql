@@ -16,14 +16,14 @@ const Post = ({ title, thumbnail, id, body }) => {
 
   }
   return (
-  <div className="card cards" style={{position:"relative"}}>
+  <div className="card cards" style={{position:"relative",borderRadius:"23px"}}>
     <Link
       to={`/post/${id}`}
       
       style={{ textDecoration: "none", borderRadius: "32px" }}
     >
       <div className="card-image" >
-        <img src={thumbnail} width="300" height="200" alt=""style={{borderRadius: "32px 32px 0 0 "}}  />
+        <img src={thumbnail} width="300" height="200" alt="" style={{borderRadius:"23px 22px 0 0"}}  />
       </div>
     </Link>
 
