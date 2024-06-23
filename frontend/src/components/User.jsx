@@ -7,7 +7,7 @@ const User = () => {
   localStorage.setItem("users", JSON.stringify(data));
 
   if (error) return alert(error.message);
-  if (loading) return <h1 className="text-center mt-5">Loading </h1>;
+  if (loading) return <h1 className="text-center mt-4">Loading </h1>;
   return (
     <div className="container" style={{ marginTop: "100px", padding: "0 4%" }}>
       |

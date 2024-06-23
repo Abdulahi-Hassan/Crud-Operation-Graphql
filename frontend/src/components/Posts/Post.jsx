@@ -16,7 +16,7 @@ const Post = ({ title, thumbnail, id, body }) => {
 
   }
   return (
-  <div className="card cards">
+  <div className="card cards" style={{position:"relative"}}>
     <Link
       to={`/post/${id}`}
       
@@ -27,7 +27,7 @@ const Post = ({ title, thumbnail, id, body }) => {
       </div>
     </Link>
 
-      <div className="card-body relative  text-white" style={{borderRadius:"0 0 23px 23px",position:"relative", backgroundColor:"blue"}}>
+      <div className="card-body relative  text-white" style={{borderRadius:"0 0 23px 23px", backgroundColor:"blue"}}>
         <h1 >{title}</h1>
         <button onClick={HandleDelete} className="btn btn-danger" style={{position:"absolute",right:"10px", top:"10px"}}>Delete</button>
         <p className="body">{body}</p>

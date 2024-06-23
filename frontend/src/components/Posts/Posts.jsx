@@ -6,7 +6,7 @@ const Posts = () => {
   const { data, loading, error } = useSubscription(GetallPosts);
   localStorage.setItem("posts", JSON.stringify(data));
   if (error) return alert(error.message);
-  if (loading) return <h1>Loading ....</h1>;
+  if (loading) return <h1 className="text-center mt-4">Loading ....</h1>;
   return (
     <div className="grid">
       {data.Posts.map((data, index) => (

@@ -17,7 +17,8 @@ function App() {
         <Route path="/updateuser/:id" element={<UserUpdate />} />
         <Route path="/post/:id" element={<PostUpdate/>} />
         <Route path="/user" element={<User />} />
-        <Route path="/" element={<Posts />} />
+        <Route path="/"  element={<Posts />} />
+        <Route path="*"   element={<h1 style={{display:"flex",alignItems:"center",justifyContent:"center",height:"100vh"}}>Not found</h1>} />
         <Route path="/newposts" element={<NewPost />} />
         <Route path="/deleteuser/:id" element={<DeleteUser />} />
       </Routes>
