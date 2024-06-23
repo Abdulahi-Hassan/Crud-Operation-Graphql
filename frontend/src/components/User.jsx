@@ -1,13 +1,25 @@
-import { useSubscription } from "@apollo/client";
+import { useMutation, useSubscription } from "@apollo/client";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { GetAllUsers } from "./subscriptions";
+import { Deleteuser } from "../Apollo-Client";
+import toast from "react-hot-toast";
 const User = () => {
+  const [MyMutation] = useMutation(Deleteuser);
   const { data, loading, error } = useSubscription(GetAllUsers);
   localStorage.setItem("users", JSON.stringify(data));
 
   if (error) return alert(error.message);
   if (loading) return <h1 className="text-center mt-4">Loading </h1>;
+
+  const HandleDelete = (id) => {
+    MyMutation({
+      variables: {
+        ID: id,
+      },
+    });
+    toast.success("Successfully Delete User");
+  };
   return (
     <div className="container" style={{ marginTop: "100px", padding: "0 4%" }}>
       |
@@ -77,12 +89,12 @@ const User = () => {
               <td>
                 {
                   <div>
-                    <Link
-                      to={`/deleteuser/${data.ID}`}
+                    <button
+                      onClick={() => HandleDelete(data.ID)}
                       className="btn btn-danger mx-2"
                     >
                       Delete
-                    </Link>
+                    </button>
                   </div>
                 }
               </td>
